@@ -16,14 +16,16 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   return (
-    <nav className={styles.nav}>
-      {navLinks.map((navlink) => (
-        <ul key={navlink.id}>
-          <li>
-            <Link href={navlink.href}>{navlink.text}</Link>
+    <nav>
+      <ul className={styles.nav}>
+        {navLinks.map((navlink) => (
+          <li key={navlink.id}>
+            <Link className={styles["nav-link"]} href={navlink.href}>
+              {navlink.text}
+            </Link>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </nav>
   );
 }
