@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
+import ActionButtons from "@/components/action-buttons/action-buttons";
 
 export default function Hero() {
   return (
@@ -20,8 +21,4 @@ export default function Hero() {
       <ActionButtons />
     </div>
   );
-}
-
-function ActionButtons() {
-  return <div></div>;
 }
