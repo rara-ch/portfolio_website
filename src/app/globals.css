@@ -1,3 +1,4 @@
+/* Resets */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -53,4 +54,20 @@ ul, ol, p, a, hr, figure {
 
 p, a {
     color: inherit;
+}
+
+/* Styles */
+:root {
+  --clr-background: #11172A;
+  --clr-content: #626C7D;
+  --clr-highlight: #599692;
+  --clr-title: #DFE5EC;
+}
+
+html {
+  background-color: var(--clr-background);
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif;
 }
