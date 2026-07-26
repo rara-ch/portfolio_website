@@ -12,3 +12,14 @@
     border-radius: 100vh;
     border: var(--clr-highlight) solid 5px;
 }
+
+.location {
+    font-weight: bold;
+}
+
+.location-icon {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 1.25rem;
+    aspect-ratio: 1;
+}

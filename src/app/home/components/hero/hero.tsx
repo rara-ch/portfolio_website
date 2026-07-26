@@ -1,6 +1,7 @@
 import Image from "next/image";
-import styles from "./hero.module.css";
 import ActionButtons from "@/components/action-buttons/action-buttons";
+import { location } from "@/nodes/icons";
+import styles from "./hero.module.css";
 
 export default function Hero() {
   return (
@@ -17,6 +18,10 @@ export default function Hero() {
       <p>
         Software Engineer building data management systems and consumer apps on
         both mobile and web
+      </p>
+      <p className={styles.location}>
+        <span className={styles["location-icon"]}>{location}</span> Melbourne,
+        Australia
       </p>
       <ActionButtons />
     </div>
