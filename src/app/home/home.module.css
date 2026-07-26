@@ -1,0 +1,12 @@
+.header {
+    block-size: 100vh;
+    align-content: center;
+}
+
+.nav-wrapper {
+   position: fixed; 
+   z-index: 1000;
+   top: 0;
+   left: 0;
+   width: 100%;
+}

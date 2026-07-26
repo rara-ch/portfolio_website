@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    gap: 1rem;
+    inline-size: 800px;
+    margin-inline: auto;
+    justify-items: center;
+    text-align: center;
+    color: var(--clr-title)
+}
+
+.profile-pic {
+    border-radius: 100vh;
+    border: var(--clr-highlight) solid 5px;
+}
