@@ -1,6 +1,8 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import Section from "@/utils/section/section";
 import Hero from "./components/hero/hero";
+import TechnicalSkills from "./components/technical_skills/technical_skills";
 import styles from "./home.module.css";
 
 export default function Home() {
@@ -12,7 +14,11 @@ export default function Home() {
         </div>
         <Hero />
       </header>
-      <main></main>
+      <main>
+        <Section title="My Technical Skills" subtitle="Here are the technologies and tools I have experience with">
+          <TechnicalSkills/>
+        </Section>
+      </main>
       <Footer />
     </>
   );

@@ -1,0 +1,30 @@
+.skills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--clr-content);
+    border-radius: 15px;
+}
+
+.skill {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 0.5rem;
+    align-items: center;
+    background-color: var(--clr-highlight);
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+}
+
+.icon {
+    width: 1rem;
+    aspect-ratio: 1;
+}
+
+.name {
+    color: var(--clr-title);
+    text-wrap: nowrap;
+    font-weight: bold;
+}
