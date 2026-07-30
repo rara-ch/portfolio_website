@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ActionButtons from "@/components/action-buttons/action-buttons";
-import { location } from "@/nodes/icons";
+import { location } from "@/utils/icons";
 import styles from "./hero.module.css";
 
 export default function Hero() {

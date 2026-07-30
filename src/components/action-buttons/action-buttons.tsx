@@ -1,4 +1,4 @@
-import { email, github, linkedIn } from "@/nodes/icons";
+import { email, github, linkedIn } from "@/utils/icons";
 import styles from "./action-buttons.module.css";
 import Link from "next/link";
 
