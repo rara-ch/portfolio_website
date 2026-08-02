@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
       </header>
       <main>
-        <Section title="My Technical Skills" subtitle="Here are the technologies and tools I have experience with">
+        <Section title="My Technical Skills" subtitle="I am constantly trying to improve">
           <TechnicalSkills/>
         </Section>
       </main>
