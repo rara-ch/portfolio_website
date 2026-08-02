@@ -1,7 +1,8 @@
 .content-wrapper {
 	max-block-size: 1500px;
 	padding-inline: 1rem;
-	margin: auto;
+	margin-inline: auto;
+	margin-block: 2rem;
 }
 
 .title, .subtitle {
