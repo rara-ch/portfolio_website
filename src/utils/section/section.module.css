@@ -17,5 +17,6 @@
 .subtitle {
 	color: var(--clr-content);
 	margin-block: 2rem;
+	font-weight: 600;
 }
 
