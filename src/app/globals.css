@@ -44,6 +44,10 @@ img, picture, video, canvas, svg {
     max-inline-size: 100%;
 }
 
+button {
+  border: none;
+}
+
 button:hover {
     cursor: pointer;
 }

@@ -1,29 +1,111 @@
-import {Icons} from '@/utils/icons';
-import styles from './technical_skills.module.css';
+"use client";
+
+import { useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import type { JSX } from "react/jsx-runtime";
+import { Icons } from "@/utils/icons";
+import styles from "./technical_skills.module.css";
+
+type SkillData = {
+  name: string;
+  icon: JSX.Element;
+};
+
+type SkillsData = Record<string, SkillData[]>;
+const skillsData: SkillsData = {
+  Languages: [
+    { name: "Dart", icon: Icons.dart },
+    { name: "Go", icon: Icons.golang },
+    { name: "Python", icon: Icons.python },
+    { name: "JavaScript", icon: Icons.js },
+    { name: "TypeScript", icon: Icons.ts },
+    { name: "Coldfusion", icon: Icons.coldfusion },
+    { name: "SQL", icon: Icons.mysql },
+    { name: "HTML", icon: Icons.html },
+    { name: "CSS", icon: Icons.css },
+  ],
+  "Frameworks & Libraries": [
+    { name: "Flutter", icon: Icons.flutter },
+    { name: "React", icon: Icons.react },
+    { name: "Next.js", icon: Icons.next },
+    { name: "Taffy", icon: Icons.coldfusion },
+    { name: "THREE.js", icon: Icons.three },
+    { name: "Bootstrap", icon: Icons.bootstrap },
+  ],
+  "Developer Tools": [
+    { name: "Git", icon: Icons.git },
+    { name: "GitHub", icon: Icons.github },
+    { name: "VS Code", icon: Icons.vsCode },
+    { name: "Postman", icon: Icons.postman },
+    { name: "Android SDK", icon: Icons.android },
+  ],
+  // "Data Analytics": [
+  //   { name: "Pandas", icon: Icons.coldfusion },
+  //   { name: "Matplotlib", icon: Icons.coldfusion },
+  //   { name: "Seaborn", icon: Icons.coldfusion },
+  //   { name: "NumPy", icon: Icons.coldfusion },
+  //   { name: "scikit-learn", icon: Icons.coldfusion },
+  //   { name: "Tableau", icon: Icons.coldfusion },
+  // ],
+  Databases: [
+    { name: "MySQL", icon: Icons.mysql },
+    { name: "Postgres", icon: Icons.postgres },
+    { name: "Microsoft SQL Server", icon: Icons.msSQL },
+  ],
+};
 
 export default function TechnicalSkills() {
-  return <div><Skills/></div>;
+  const [selectedCategory, setSelectedCategory] = useState("Languages");
+
+  const skills = skillsData[selectedCategory];
+
+  return (
+    <div>
+      <div className={styles.categories}>
+        {Object.keys(skillsData).map((category) => (
+          <CategoryButton
+            key={category}
+            category={category}
+            isSelected={category === selectedCategory}
+            setCategory={setSelectedCategory}
+          />
+        ))}
+      </div>
+      <div className={styles.skills}>
+        {skills.map((skill) => (
+          <Skill key={skill.name} {...skill} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-function Skills() {
-  return <div className={styles.skills}>
-    <Skill icon={Icons.dart} name="Dart"/>
-    <Skill icon={Icons.golang} name="Go"/>
-    <Skill icon={Icons.python} name="Python"/>
-    <Skill icon={Icons.js} name="JavaScript"/>
-    <Skill icon={Icons.ts} name="TypeScript"/>
-    <Skill icon={Icons.coldfusion} name="Coldfusion"/>
-    <Skill icon={Icons.mysql} name="SQL"/>
-    <Skill icon={Icons.html} name="HTML"/>
-    <Skill icon={Icons.css} name="CSS"/>
-  </div>;
+function CategoryButton(CategoryButtonProps: {
+  category: string;
+  isSelected: boolean;
+  setCategory: Dispatch<SetStateAction<string>>;
+}) {
+  const category = CategoryButtonProps.category;
+  const className = CategoryButtonProps.isSelected
+    ? `${styles.category} ${styles.selected}`
+    : styles.category;
+  return (
+    <button
+      className={className}
+      key={CategoryButtonProps.category}
+      type="button"
+      onClick={() => CategoryButtonProps.setCategory(category)}
+    >
+      {category}
+    </button>
+  );
 }
 
-function Skill({ icon, name }: { icon: React.ReactNode; name: string }) {
+function Skill(skill: SkillData) {
   return (
     <div className={styles.skill}>
-      <div className={styles.icon}>{icon}</div>
-      <span className={styles.name}>{name}</span>
+      <div className={styles.icon}>{skill.icon}</div>
+      <span className={styles.name}>{skill.name}</span>
     </div>
   );
 }

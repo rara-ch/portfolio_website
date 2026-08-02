@@ -1,3 +1,29 @@
+.categories {
+    max-inline-size: 1500px;
+    margin-block: 2rem;
+    margin-inline: auto;
+    display: flex;
+    justify-self: center;
+    gap: 0.5rem;
+    background-color: var(--clr-content);
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.category {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    border-radius: 10px;
+    color: var(--clr-title);
+    padding: 0.33rem;
+}
+
+.selected {
+    background-color: var(--clr-highlight);
+    border: 0.5px solid var(--clr-title);
+}
+
 .skills {
     display: flex;
     gap: 1rem;
@@ -15,6 +41,7 @@
     align-items: center;
     background-color: var(--clr-highlight);
     padding: 0.25rem 0.5rem;
+    border: 0.5px solid var(--clr-title);
     border-radius: 10px;
 }
 
