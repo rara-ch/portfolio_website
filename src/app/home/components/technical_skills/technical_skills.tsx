@@ -5,6 +5,7 @@ import type { Dispatch, SetStateAction } from "react";
 import type { JSX } from "react/jsx-runtime";
 import { Icons } from "@/utils/icons";
 import styles from "./technical_skills.module.css";
+import EntryAnimation from "@/utils/animations/entry-animation";
 
 type SkillData = {
   name: string;
@@ -60,23 +61,27 @@ export default function TechnicalSkills() {
   const skills = skillsData[selectedCategory];
 
   return (
-    <div>
-      <div className={styles.categories}>
-        {Object.keys(skillsData).map((category) => (
-          <CategoryButton
-            key={category}
-            category={category}
-            isSelected={category === selectedCategory}
-            setCategory={setSelectedCategory}
-          />
-        ))}
-      </div>
-      <div className={styles.skills}>
-        {skills.map((skill) => (
-          <Skill key={skill.name} {...skill} />
-        ))}
-      </div>
-    </div>
+    <>
+      <EntryAnimation delay={0.4}>
+        <div className={styles.categories}>
+          {Object.keys(skillsData).map((category) => (
+            <CategoryButton
+              key={category}
+              category={category}
+              isSelected={category === selectedCategory}
+              setCategory={setSelectedCategory}
+            />
+          ))}
+        </div>
+      </EntryAnimation>
+      <EntryAnimation delay={0.6}>
+        <div className={styles.skills}>
+          {skills.map((skill) => (
+            <Skill key={skill.name} {...skill} />
+          ))}
+        </div>
+      </EntryAnimation>
+    </>
   );
 }
 
