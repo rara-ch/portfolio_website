@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import type { JSX } from "react/jsx-runtime";
+import EntryAnimation from "@/utils/animations/entry-animation";
 import { Icons } from "@/utils/icons";
 import styles from "./technical_skills.module.css";
-import EntryAnimation from "@/utils/animations/entry-animation";
 
 type SkillData = {
   name: string;
