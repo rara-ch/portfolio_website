@@ -16,8 +16,7 @@ export default function Hero() {
       />
       <h1>Rahul Chitkara</h1>
       <p>
-        Software Engineer building data management systems and consumer apps on
-        both mobile and web
+        <span className={styles.highlight}>Full Stack Software Engineer</span> Building <span className={styles.highlight}>Web and Mobile Apps</span> at a <span className={styles.highlight}>Small Technology Company</span>
       </p>
       <p className={styles.location}>
         <span className={styles["location-icon"]}>{location}</span> Melbourne,
