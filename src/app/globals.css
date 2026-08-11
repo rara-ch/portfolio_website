@@ -66,6 +66,9 @@ p, a {
   --clr-content: #626C7D;
   --clr-highlight: #599692;
   --clr-title: #DFE5EC;
+
+  --clr-card-background: #181F38;
+  --clr-card-border: #626C7D33;
 }
 
 html {
