@@ -17,6 +17,8 @@ export default function Projects() {
 }
 
 function Card({ project }: { project: Project }) {
+  const clientsTitleText = project.clients.length === 1 ? 'Client' : 'Clients';  
+
   return (
     <div className={styles["project-card"]}>
       <Image
@@ -31,7 +33,7 @@ function Card({ project }: { project: Project }) {
       <p className={styles.description}>{project.description}</p>
       <div className={styles["clients-section"]}>
         <div>
-          <span className={styles["clients-title"]}>Clients</span>
+          <span className={styles["clients-title"]}>{clientsTitleText}</span>
         </div>
         <div className={styles.clients}>
         {project.clients.map((client) => (
