@@ -39,10 +39,6 @@
     grid-template-columns: min-content min-content;
     gap: 0.5rem;
     align-items: center;
-    background-color: var(--clr-highlight);
-    padding: 0.25rem 0.5rem;
-    border: 0.5px solid var(--clr-title);
-    border-radius: 10px;
 }
 
 .icon {

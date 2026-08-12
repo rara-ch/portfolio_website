@@ -4,6 +4,7 @@ import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import type { JSX } from "react/jsx-runtime";
 import EntryAnimation from "@/utils/animations/entry-animation";
+import Chip from "@/utils/components/chip";
 import { Icons } from "@/utils/icons";
 import styles from "./technical_skills.module.css";
 
@@ -108,9 +109,11 @@ function CategoryButton(CategoryButtonProps: {
 
 function Skill(skill: SkillData) {
   return (
-    <div className={styles.skill}>
-      <div className={styles.icon}>{skill.icon}</div>
-      <span className={styles.name}>{skill.name}</span>
-    </div>
+    <Chip>
+      <div className={styles.skill}>
+        <div className={styles.icon}>{skill.icon}</div>
+        <span className={styles.name}>{skill.name}</span>
+      </div>
+    </Chip>
   );
 }
