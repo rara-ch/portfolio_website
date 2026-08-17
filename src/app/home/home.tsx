@@ -2,7 +2,7 @@ import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
 import Section from "@/utils/section/section";
 import Hero from "./components/hero/hero";
-import Projects from "./components/projects/projects";
+import ProjectsSection from "./components/projects/projects";
 import TechnicalSkills from "./components/technical_skills/technical_skills";
 import styles from "./home.module.css";
 
@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
       </header>
       <main>
-        <Projects />
+        <ProjectsSection />
 
         <Section
           title="My Technical Skills"

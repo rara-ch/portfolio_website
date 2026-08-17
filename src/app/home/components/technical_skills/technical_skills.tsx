@@ -8,6 +8,7 @@ import Chip from "@/utils/components/chip";
 import { Icons } from "@/utils/icons";
 import styles from "./technical_skills.module.css";
 
+// TODO: Remove these types and replace with global Technology interface
 type SkillData = {
   name: string;
   icon: JSX.Element;
@@ -41,14 +42,6 @@ const skillsData: SkillsData = {
     { name: "Postman", icon: Icons.postman },
     { name: "Android SDK", icon: Icons.android },
   ],
-  // "Data Analytics": [
-  //   { name: "Pandas", icon: Icons.coldfusion },
-  //   { name: "Matplotlib", icon: Icons.coldfusion },
-  //   { name: "Seaborn", icon: Icons.coldfusion },
-  //   { name: "NumPy", icon: Icons.coldfusion },
-  //   { name: "scikit-learn", icon: Icons.coldfusion },
-  //   { name: "Tableau", icon: Icons.coldfusion },
-  // ],
   Databases: [
     { name: "MySQL", icon: Icons.mysql },
     { name: "Postgres", icon: Icons.postgres },
