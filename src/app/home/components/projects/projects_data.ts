@@ -1,7 +1,7 @@
 import type { ImageData } from "@/utils/types/Image";
 import { Technologies, type Technology } from "@/utils/types/Technology";
 
-interface ProjectTechnology {
+export interface ProjectTechnology {
   technology: Technology;
   isFrontEnd: boolean | null;
 }

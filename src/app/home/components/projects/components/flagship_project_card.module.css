@@ -1,0 +1,49 @@
+.flagship-project-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "image title"
+    "image description"
+    "image technologies";
+}
+
+.image {
+    grid-area: image;
+}
+
+.title {
+    grid-area: title;
+}
+
+.description {
+    grid-area: description;
+}
+
+.technologies {
+    grid-area: technologies;
+}
+
+.chips {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.chip {
+    display: grid;
+    grid-template-columns: auto min-content;
+    gap: 0.5rem;
+    place-items: center;
+}
+
+.chip-icon {
+    width: 1rem;
+    height: 1rem;
+    aspect-ratio: 1;
+}
+
+.chip-text {
+    text-wrap: nowrap;
+    font-weight: bold;
+    color: var(--clr-title)
+}

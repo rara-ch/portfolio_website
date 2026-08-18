@@ -1,21 +1,26 @@
 import Image from "next/image";
 import Section from "@/utils/section/section";
+import FlagshipProjectCard from "./components/flagship_project_card";
 import styles from "./projects.module.css";
-import { type Project, projects } from "./projects_data";
+import { flagshipProject, type Project, projects } from "./projects_data";
 
 export default function ProjectsSection() {
   return (
-    <Section title="Projects" subtitle="PLACEHOLDER">
+    <Section title="Projects" subtitle="Flagship Project">
+      <div>
+        <FlagshipProjectCard project={flagshipProject}/>
+      </div>
       <div className={styles["projects-grid"]}>
         {projects.map((project) => (
-          <Card key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </Section>
   );
 }
 
-function Card({ project }: { project: Project }) {
+// TODO: Put this into its own .tsx file
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className={styles["project-card"]}>
       <Image
