@@ -16,7 +16,7 @@ export default function FlagshipProjectCard({
     : [];
 
   return (
-    <div className={styles["flagship-project-card"]}>
+    <div className={`${styles["flagship-project-card"]} card`}>
       <Image
         className={styles.image}
         src={project.image.path}

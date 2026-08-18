@@ -22,7 +22,7 @@ export default function ProjectsSection() {
 // TODO: Put this into its own .tsx file
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className={styles["project-card"]}>
+    <div className={`${styles["project-card"]} card`}>
       <Image
         className={styles.image}
         src={project.image.path}

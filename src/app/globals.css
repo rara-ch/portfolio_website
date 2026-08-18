@@ -69,6 +69,8 @@ p, a {
 
   --clr-card-background: #181F38;
   --clr-card-border: #626C7D33;
+
+  --card-border-radius: 30px;
 }
 
 html {
@@ -77,4 +79,11 @@ html {
 
 body {
   font-family: var(--font-poppins), sans-serif;
+}
+
+.card {
+  background-color: var(--clr-card-background);
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--clr-card-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
