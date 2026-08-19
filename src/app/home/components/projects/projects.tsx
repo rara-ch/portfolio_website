@@ -1,4 +1,7 @@
+'use client';
+
 import Image from "next/image";
+import EntryAnimation from "@/utils/animations/entry-animation";
 import Section from "@/utils/section/section";
 import FlagshipProjectCard from "./components/flagship_project_card";
 import styles from "./projects.module.css";
@@ -8,7 +11,9 @@ export default function ProjectsSection() {
   return (
     <Section title="Projects" subtitle="Flagship Project">
       <div>
-        <FlagshipProjectCard project={flagshipProject}/>
+          <EntryAnimation delay={0.4}>
+            <FlagshipProjectCard project={flagshipProject} />
+          </EntryAnimation>
       </div>
       <p className="section-subtitle">Other Projects</p>
       <div className={styles["projects-grid"]}>
