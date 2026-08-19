@@ -10,6 +10,7 @@ export default function ProjectsSection() {
       <div>
         <FlagshipProjectCard project={flagshipProject}/>
       </div>
+      <p className="section-subtitle">Other Projects</p>
       <div className={styles["projects-grid"]}>
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

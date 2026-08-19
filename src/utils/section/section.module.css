@@ -5,18 +5,12 @@
 	margin-block: 2rem;
 }
 
-.title, .subtitle {
+.title {
 	text-align: center;
 }
 
 .title {
 	color: var(--clr-title);
 	margin-block: 2rem;
-}
-
-.subtitle {
-	color: var(--clr-content);
-	margin-block: 2rem;
-	font-weight: 600;
 }
 

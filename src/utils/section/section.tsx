@@ -19,7 +19,7 @@ export default function Section({
           <h2 className={styles.title}>{title}</h2>
         </EntryAnimation>
         <EntryAnimation delay={0.2}>
-          <p className={styles.subtitle}>{subtitle}</p>
+          <p className="section-subtitle">{subtitle}</p>
         </EntryAnimation>
         <div>{children}</div>
       </div>
