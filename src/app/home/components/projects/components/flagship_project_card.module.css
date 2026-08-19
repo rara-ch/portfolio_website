@@ -1,26 +1,44 @@
 .flagship-project-card {
     display: grid;
     grid-template-columns: auto 1fr;
+    gap: 1rem;
     grid-template-areas: 
     "image title"
     "image description"
     "image technologies";
+    padding: var(--project-card-padding);
 }
 
 .image {
     grid-area: image;
+    border-radius: var(--card-border-radius);
 }
 
 .title {
     grid-area: title;
+    color: var(--clr-title);
+    text-align: center;
 }
 
 .description {
     grid-area: description;
+    color: var(--clr-content);
+    text-align: center;
 }
 
 .technologies {
     grid-area: technologies;
+    display: grid;
+    gap: 0.2rem;
+    color: var(--clr-content);
+}
+
+.technologies-subtitle {
+    color: var(--clr-content);
+}
+
+.subtitle {
+    color: var(--clr-title);
 }
 
 .chips {

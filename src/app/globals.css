@@ -71,6 +71,7 @@ p, a {
   --clr-card-border: #626C7D33;
 
   --card-border-radius: 30px;
+  --project-card-padding: 0.5rem;
 }
 
 html {

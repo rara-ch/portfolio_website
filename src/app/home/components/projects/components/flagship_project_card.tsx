@@ -27,9 +27,9 @@ export default function FlagshipProjectCard({
       <h2 className={styles.title}>{project.title}</h2>
       <p className={styles.description}>{project.description}</p>
       <section className={styles.technologies}>
-        <h3 className={styles.subheading}>Technologies</h3>
+        <h3 className={styles.subtitle}>Technologies</h3>
         {project.isDecoupled ? (
-          <div>
+          <>
             <div>
               <TechnologiesSection
                 title={"Front End"}
@@ -42,7 +42,7 @@ export default function FlagshipProjectCard({
                 technologies={backEndTechnologies}
               />
             </div>
-          </div>
+          </>
         ) : (
           <div>
             <TechnologiesSection technologies={project.technologies} title={null}/>
@@ -62,7 +62,7 @@ function TechnologiesSection({
 }) {
   return (
     <>
-      {title != null ? <h4>{title}</h4> : null}
+      {title != null ? <h4 className={styles["technologies-subtitle"]}>{title}</h4> : null}
       <div className={styles.chips}>
         {technologies.map((projectTechnology) => (
           <Chip key={projectTechnology.technology.id}>

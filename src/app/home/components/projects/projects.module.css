@@ -7,8 +7,6 @@
 
 /* Make the card a global class */
 .project-card {
-    --project-card-padding: 0.5rem;
-
     padding: var(--project-card-padding);
     display: grid;
     grid-template-rows: subgrid;
