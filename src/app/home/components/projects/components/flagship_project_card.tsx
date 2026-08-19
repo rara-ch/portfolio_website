@@ -1,20 +1,16 @@
 import Image from "next/image";
 import Chip from "@/utils/components/chip";
+import { person } from "@/utils/icons";
 import type { FlagshipProject, ProjectTechnology } from "../projects_data";
 import styles from "./flagship_project_card.module.css";
+
+// TODO: DRY the Team and Technologies Section
 
 export default function FlagshipProjectCard({
   project,
 }: {
   project: FlagshipProject;
 }) {
-  const frontEndTechnologies = project.isDecoupled
-    ? project.technologies.filter((technology) => technology.isFrontEnd)
-    : [];
-  const backEndTechnologies = project.isDecoupled
-    ? project.technologies.filter((technology) => !technology.isFrontEnd)
-    : [];
-
   return (
     <div className={`${styles["flagship-project-card"]} card`}>
       <Image
@@ -26,34 +22,50 @@ export default function FlagshipProjectCard({
       />
       <h2 className={styles.title}>{project.title}</h2>
       <p className={styles.description}>{project.description}</p>
-      <section className={styles.technologies}>
-        <h3 className={styles.subtitle}>Technologies</h3>
-        {project.isDecoupled ? (
-          <>
-            <div>
-              <TechnologiesSection
-                title={"Front End"}
-                technologies={frontEndTechnologies}
-              />
-            </div>
-            <div>
-              <TechnologiesSection
-                title={"Back End"}
-                technologies={backEndTechnologies}
-              />
-            </div>
-          </>
-        ) : (
-          <div>
-            <TechnologiesSection technologies={project.technologies} title={null}/>
-          </div>
-        )}
-      </section>
+      <TechnologiesSection project={project} />
+      <TeamSection project={project} />
     </div>
   );
 }
 
-function TechnologiesSection({
+function TechnologiesSection({ project }: { project: FlagshipProject }) {
+  const frontEndTechnologies = project.isDecoupled
+    ? project.technologies.filter((technology) => technology.isFrontEnd)
+    : [];
+  const backEndTechnologies = project.isDecoupled
+    ? project.technologies.filter((technology) => !technology.isFrontEnd)
+    : [];
+  return (
+    <section className={styles.technologies}>
+      <h3 className={styles.subtitle}>Technologies</h3>
+      {project.isDecoupled ? (
+        <>
+          <div>
+            <TechnologiesSubSection
+              title={"Front End"}
+              technologies={frontEndTechnologies}
+            />
+          </div>
+          <div>
+            <TechnologiesSubSection
+              title={"Back End"}
+              technologies={backEndTechnologies}
+            />
+          </div>
+        </>
+      ) : (
+        <div>
+          <TechnologiesSubSection
+            technologies={project.technologies}
+            title={null}
+          />
+        </div>
+      )}
+    </section>
+  );
+}
+
+function TechnologiesSubSection({
   technologies,
   title,
 }: {
@@ -62,7 +74,9 @@ function TechnologiesSection({
 }) {
   return (
     <>
-      {title != null ? <h4 className={styles["technologies-subtitle"]}>{title}</h4> : null}
+      {title != null ? (
+        <h4 className={styles["section-subtitle"]}>{title}</h4>
+      ) : null}
       <div className={styles.chips}>
         {technologies.map((projectTechnology) => (
           <Chip key={projectTechnology.technology.id}>
@@ -78,5 +92,47 @@ function TechnologiesSection({
         ))}
       </div>
     </>
+  );
+}
+
+function TeamSection({ project }: { project: FlagshipProject }) {
+  return (
+    <section className={styles.team}>
+      <h3 className={styles.subtitle}>Team</h3>
+      <div>
+        <h4 className={styles["section-subtitle"]}>Front End</h4>
+        <div className={styles.chips}>
+          <Chip>
+            <div className={styles.chip}>
+              <div
+                className={`${styles["chip-icon"]} ${styles["person-icon"]}`}
+              >
+                {person}
+              </div>
+              <span className={styles["chip-text"]}>
+                {project.numTeamFrontEnd}
+              </span>
+            </div>
+          </Chip>
+        </div>
+      </div>
+      <div>
+        <h4 className={styles["section-subtitle"]}>Back End</h4>
+        <div className={styles.chips}>
+          <Chip>
+            <div className={styles.chip}>
+              <div
+                className={`${styles["chip-icon"]} ${styles["person-icon"]}`}
+              >
+                {person}
+              </div>
+              <span className={styles["chip-text"]}>
+                {project.numTeamBackEnd}
+              </span>
+            </div>
+          </Chip>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,11 +1,11 @@
 .flagship-project-card {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr 1fr;
     gap: 1rem;
     grid-template-areas: 
-    "image title"
-    "image description"
-    "image technologies";
+    "image title title"
+    "image description description"
+    "image technologies team";
     padding: var(--project-card-padding);
 }
 
@@ -28,17 +28,28 @@
 
 .technologies {
     grid-area: technologies;
+}
+
+.team {
+    grid-area: team;
+}
+
+.technologies, .team {
     display: grid;
     gap: 0.2rem;
     color: var(--clr-content);
 }
 
-.technologies-subtitle {
-    color: var(--clr-content);
+.person-icon {
+    color: var(--clr-title);
 }
 
 .subtitle {
     color: var(--clr-title);
+}
+
+.section-subtitle {
+    color: var(--clr-content);
 }
 
 .chips {
